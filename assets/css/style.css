@@ -1,0 +1,48 @@
+body {
+    background-image: url("../images/memphis-mini-dark.png");
+}
+
+body, h1, h2, h3 {
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    width: 400px;
+    height: 100px;
+    margin: 0px 0px 10px 10px;
+    background-color: blue;
+    padding: 20px 0px 0px 5px;
+    font-size: 42px;
+}
+
+section {
+    width: 600px;
+    line-height: 24px;
+    font-size: 18px;
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+}
+
+p {
+    margin: 10px 0px;
+}
+
+#random-num {
+    background-color: blue;
+}
+
+#score {
+    background-color: blue;
+}
+
+#crystals{
+    background-color: white;
+}
+
+#total-score{
+    background-color: blue;
+}
