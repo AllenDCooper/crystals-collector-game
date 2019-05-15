@@ -59,6 +59,14 @@ function isEndOfRound(round) {
 }
 
 //function for setting up a game
+function setupGame() {
+    var game = {
+        wins: 0,
+        losses: 0,
+        round: setupRound(randomNum()),
+    }
+    return game;
+}
 
 //function for starting new round
 
