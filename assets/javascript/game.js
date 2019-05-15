@@ -1,13 +1,13 @@
 //function for generating random number between 19 and 120
 function randomNum() {
     return Math.floor(Math.random()*102) + 19;
-}
+};
 
 //array of possible jewel values
-var jewelArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+var jewelArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 //array of jewel values 
-var jewelValues = []
+var jewelValues = [];
 
 //function for generating four random values from the jewelArr. This function also removes the value from the jewelArr after it's generated,so that no two random values will be the same.
 function getJewelValues() {
@@ -40,7 +40,7 @@ function hasWon(round) {
         return true;
     }
     return false;
-}
+};
 
 //function for determining if user lost
 function hasLost(round) {
@@ -48,7 +48,7 @@ function hasLost(round) {
         return true;
     }
     return false;
-}
+};
 
 //function for determining if end of round
 function isEndOfRound(round) {
@@ -56,7 +56,7 @@ function isEndOfRound(round) {
         return true;
     }
     return false;
-}
+};
 
 //function for setting up a game
 function setupGame() {
@@ -66,9 +66,19 @@ function setupGame() {
         round: setupRound(randomNum()),
     }
     return game;
-}
+};
 
 //function for starting new round
+function startNewRound(game) {
+    if (hasWon(game.round) === true) {
+        game.wins++;
+    } else if (hasLost(game.round) === true) {
+        game.losses++;
+    }
+    if (isEndOfRound(game.round) === true) {
+        game.round = setupRound(randomNum());
+    }
+};
 
 //assigning variable game to game object, to store wins, losses, and round object
 
