@@ -35,11 +35,28 @@ function updateRound(gameObject, userVal) {
 };
 
 //function for determining if user won
-
+function hasWon(round) {
+    if (round.curPoints === round.randomNum) {
+        return true;
+    }
+    return false;
+}
 
 //function for determining if user lost
+function hasLost(round) {
+    if (round.curPoints > round.randomNum) {
+        return true;
+    }
+    return false;
+}
 
 //function for determining if end of round
+function isEndOfRound(round) {
+    if ((hasWon(round) === true) || ((hasLost(round) === true))) {
+        return true;
+    }
+    return false;
+}
 
 //function for setting up a game
 
