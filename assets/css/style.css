@@ -39,10 +39,28 @@ p {
     background-color: blue;
 }
 
-#crystals{
-    background-color: white;
+#crystals {
+    width: 500px;
+    margin: 10px;
 }
 
-#total-score{
+td {
+    background-color: white;
+    margin: 0px 10px;
+}
+
+#total-score {
     background-color: blue;
+    margin: 10px;
+}
+
+#total-score-head {
+    background-color: blue;
+    margin: 10px;
+    width: 500px;
+}
+
+img {
+    width: 100px;
+    height: auto;
 }
