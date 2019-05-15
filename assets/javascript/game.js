@@ -9,7 +9,7 @@ var jewelArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 //array of jewel values 
 var jewelValues = []
 
-//function for generating four random values from the jewelArr. This function removes the previous generated random value from the jewelArr,so that no two random values will be the same
+//function for generating four random values from the jewelArr. This function also removes the value from the jewelArr after it's generated,so that no two random values will be the same.
 function getJewelValues() {
     for (i = 0; i < 4; i++) {
         var index = Math.floor(Math.random() * jewelArr.length);
@@ -20,6 +20,14 @@ function getJewelValues() {
 }
 
 //function for setting up a round, that creates object round that stores randomNum, array of jewelVals, curPoints
+function setupRound(numTarget) {
+    var round = {
+        randomNum: numTarget,
+        jewelVals: getJewelValues(),
+        curPoints: 0,
+    }
+    return round;
+};
 
 //function for updating round
 
