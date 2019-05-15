@@ -30,8 +30,12 @@ function setupRound(numTarget) {
 };
 
 //function for updating round
+function updateRound(gameObject, userVal) {
+    gameObject.round.curPoints += userVal;
+};
 
 //function for determining if user won
+
 
 //function for determining if user lost
 
