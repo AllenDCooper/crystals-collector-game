@@ -26,12 +26,17 @@ function setupRound(numTarget) {
         jewelVals: getJewelValues(),
         curPoints: 0,
     }
+    $("#crystal-1").attr("data", round.jewelVals[0]);
+    $("#crystal-2").attr("data", round.jewelVals[1]);
+    $("#crystal-3").attr("data", round.jewelVals[2]);
+    $("#crystal-4").attr("data", round.jewelVals[3]);
     return round;
 };
 
 //function for updating round
 function updateRound(gameObject, userVal) {
-    gameObject.round.curPoints += userVal;
+    gameObject.round.curPoints += parseInt(userVal);
+    $("#total-score").text(game.round.curPoints);
 };
 
 //function for determining if user won
@@ -81,7 +86,34 @@ function startNewRound(game) {
 };
 
 //assigning variable game to game object, to store wins, losses, and round object
+var game = setupGame();
 
 //functions for printing game object to document
 
+$("#random-num").text(game.round.randomNum);
+
 //event listener for user click
+var crystal1 = $("#crystal-1");
+var crystal2 = $("#crystal-2");
+var crystal3 = $("#crystal-3");
+var crystal4 = $("#crystal-4");
+
+$("#crystal-1").click(function() {
+    userVal = $(this).attr("data")
+    updateRound(game, userVal);
+});
+
+$("#crystal-2").click(function() {
+    userVal = $(this).attr("data")
+    updateRound(game, userVal);
+});
+
+$("#crystal-3").click(function() {
+    userVal = $(this).attr("data")
+    updateRound(game, userVal);
+});
+
+$("#crystal-4").click(function() {
+    userVal = $(this).attr("data")
+    updateRound(game, userVal);
+});
