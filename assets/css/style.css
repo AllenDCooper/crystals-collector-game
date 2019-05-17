@@ -43,7 +43,7 @@ p {
 }
 
 #score {
-    background-color: blue;
+    background-color: purple;
     width: 270px;
     padding: 5px;
     float: left;
@@ -53,15 +53,14 @@ p {
 }
 
 #crystals {
-    width: 610px;
+    width: 630px;
     margin: 10px;
     float: none;
 }
 
-td {
+button {
     background-color: white;
-    margin: 0px 10px;
-    padding: 10px;
+    margin-right: 17px;
 }
 
 /* clearfix added to prevent float of crystals on large screens */
@@ -90,6 +89,6 @@ td {
 }
 
 img {
-    width: 100px;
-    height: auto;
+    width: 120px;
+    height: 120px;
 }
