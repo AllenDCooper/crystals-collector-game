@@ -3,7 +3,7 @@ function randomNum() {
     return Math.floor(Math.random()*102) + 19;
 };
 
-//function for generating four random values from the jewelArr of possible values. This function also removes the random value from the jewelArr after it's generated,so that no two random values will be the same.
+//function for generating four random values from the jewelArr of possible values. This function also removes the random value from the jewelArr after it's generated, so that no two random values will be the same.
 function getJewelValues() {
     var jewelValues = [];
     var jewelArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -15,18 +15,17 @@ function getJewelValues() {
     return jewelValues;
 }
 
-//function for setting up a round, that creates object that stores the round data.
+//function for setting up a round, creating object that stores the round data.
 function setupRound(num) {
     var round = {
         targetNum: num,
         jewelVals: getJewelValues(),
         curPoints: 0,
     }
-    //the jewelVals then get stored in the appropriate html element for each jewel
-    $("#crystal-1").attr("data", round.jewelVals[0]);
-    $("#crystal-2").attr("data", round.jewelVals[1]);
-    $("#crystal-3").attr("data", round.jewelVals[2]);
-    $("#crystal-4").attr("data", round.jewelVals[3]);
+    //the jewelVals then get stored in the appropriate html element for each jewel. Uses for loop for cleaner code.
+    for (i = 1; i < 5; i++) {
+        $("#crystal-"+ i).attr("data", round.jewelVals[(i-1)]);
+    }
     //the user score, which equals 0, is printed to the page
     $("#total-score").text(round.curPoints);
     return round;
@@ -94,40 +93,13 @@ var game = setupGame();
 $("#random-num").text(game.round.targetNum);
 $("#score").html("wins: " + game.wins + "<br> losses: " + game.losses)
 
-//event listeners for user click that runs the updateRound function. 
-var crystal1 = $("#crystal-1");
-var crystal2 = $("#crystal-2");
-var crystal3 = $("#crystal-3");
-var crystal4 = $("#crystal-4");
-
-$("#crystal-1").click(function() {
-    userVal = $(this).attr("data")
-    updateRound(game, userVal);
-    if (isEndOfRound(game.round) ===  true) {
-        startNewRound(game);
-    }
-});
-
-$("#crystal-2").click(function() {
-    userVal = $(this).attr("data")
-    updateRound(game, userVal);
-    if (isEndOfRound(game.round) ===  true) {
-        startNewRound(game);
-    }
-});
-
-$("#crystal-3").click(function() {
-    userVal = $(this).attr("data")
-    updateRound(game, userVal);
-    if (isEndOfRound(game.round) ===  true) {
-        startNewRound(game);
-    }
-});
-
-$("#crystal-4").click(function() {
-    userVal = $(this).attr("data")
-    updateRound(game, userVal);
-    if (isEndOfRound(game.round) ===  true) {
-        startNewRound(game);
-    }
-});
+//event listeners for user click that runs the updateRound function. Uses for loop for cleaner code.
+for (i = 1; i < 5; i++) {
+    $("#crystal-"+i).click(function() {
+        userVal = $(this).attr("data")
+        updateRound(game, userVal);
+        if (isEndOfRound(game.round) ===  true) {
+            startNewRound(game);
+        }
+    });
+}
